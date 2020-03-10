@@ -3,7 +3,15 @@ import java.util.ArrayList;
 public class Exercises {
 
   public int findMe(int[] list, int target) {
-    return -1;
+	  if (target!=null && list[]!=null) {
+		  for (var i=0; i<list.size();i++) {
+			  if (list.get(i) == target) {
+				  return i;
+			  }
+		  }
+	  }
+	  
+	  return -1;
   }
 
   public int findMe(ArrayList<String> list, String target) {
