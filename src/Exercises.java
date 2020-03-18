@@ -15,7 +15,7 @@ public class Exercises {
   }
 
   public int findMe(ArrayList<String> list, String target) {
-	  if (list == null) {
+	  if (list.contains(null) || list == null || target == null) {
           return -1;
       }
 	  for (int i = 0; i < list.size(); i++) {
