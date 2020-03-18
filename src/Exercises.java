@@ -27,7 +27,7 @@ public class Exercises {
   }
 
   public int findMeFaster(ArrayList<Integer> list, int target) {
-	  if (list == null) {
+	  if (list.contains(null) || list == null) {
           return -1;
       }
 	  int start = 0;
@@ -49,7 +49,11 @@ public class Exercises {
   }
 
   public int findMeFaster(String[] list, String target) {
-    return -1;
+	  if (Arrays.asList(list).contains(null) || Arrays.asList(list) == null) {
+			return -1;
+		}
+	  
+	  return -1;
   }
 
   public int[] bubble(int[] list, boolean ascending) {
