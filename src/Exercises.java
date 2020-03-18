@@ -50,9 +50,23 @@ public class Exercises {
 
   public int findMeFaster(String[] list, String target) {
 	  if (Arrays.asList(list).contains(null) || Arrays.asList(list) == null || target == null) {
-			return -1;
-		}
+		return -1;
+	  }
 	  
+	  int start = 0;
+	  int end = list.size() - 1;
+	  int standard = -1;
+	  while (start <= end) {
+		int middle = (start + end) / 2;
+		if (list.get(middle) < target) {
+			start = middle + 1;
+		} else if (list.get(middle) > target) {
+			end = middle - 1;
+		} else if (list.get(middle) == target) {
+			standard = middle;
+			break;
+		}
+	  }
 	  return -1;
   }
 
