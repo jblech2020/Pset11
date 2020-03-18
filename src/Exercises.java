@@ -27,7 +27,7 @@ public class Exercises {
   }
 
   public int findMeFaster(ArrayList<Integer> list, int target) {
-	  if (list.contains(null) || list == null) {
+	  if (list.contains(null) || list == null || target == null) {
           return -1;
       }
 	  int start = 0;
@@ -49,7 +49,7 @@ public class Exercises {
   }
 
   public int findMeFaster(String[] list, String target) {
-	  if (Arrays.asList(list).contains(null) || Arrays.asList(list) == null) {
+	  if (Arrays.asList(list).contains(null) || Arrays.asList(list) == null || target == null) {
 			return -1;
 		}
 	  
