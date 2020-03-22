@@ -99,7 +99,11 @@ public class Exercises {
   }
 
   public ArrayList<String> bubble(ArrayList<String> list, boolean ascending) {
-    return null;
+	  if (list.contains(null) || list == null) {
+			return null;
+		}
+	  
+	  return null;
   }
 
   public ArrayList<Integer> insertion(ArrayList<Integer> list, boolean ascending) {
