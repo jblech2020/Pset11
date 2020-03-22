@@ -143,7 +143,7 @@ public class Exercises {
   }
 
   public String[] insertion(String[] list, boolean ascending) {
-	  if (list.contains(null) || list == null) {
+	  if (Arrays.asList(list).contains(null) || Arrays.asList(list) == null) {
 			return null;
 	  }
 	  
