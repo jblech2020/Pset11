@@ -143,7 +143,11 @@ public class Exercises {
   }
 
   public String[] insertion(String[] list, boolean ascending) {
-    return null;
+	  if (list.contains(null) || list == null) {
+			return null;
+	  }
+	  
+	  return null;
   }
 
   public int[] selection(int[] list, boolean ascending) {
