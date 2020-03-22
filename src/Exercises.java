@@ -265,6 +265,9 @@ public class Exercises {
   }
 
   public String[] merge(String[] list, boolean ascending) {
-    return null;
+	  	if (Arrays.asList(list).contains(null) || Arrays.asList(list) == null) {
+			String[] temp = new String[0];
+			return temp;
+		}
   }
 }
