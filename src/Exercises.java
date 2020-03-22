@@ -77,7 +77,7 @@ public class Exercises {
 	  
 	  for (int i = 0; i < list.length - 1; i++) {
 			for (int j = 0; j < list.length - i - 1; j++) {
-				if (list[j] > list[j + 1]) {
+				if (list[j] > list[j+1]) {
 					int temp = list[j];
 					list[j] = list[j + 1];
 					list[j + 1] = temp;
@@ -85,7 +85,17 @@ public class Exercises {
 			}
 	  }
 	  
-	  return null;
+	  	if (!ascending) {
+			int i, t;
+			int n = list.length;
+			for (i = 0; i < n / 2; i++) {
+				t = list[i];
+				list[i] = list[n-i-1];
+				list[n-i-1] = t;
+			}
+		}
+
+		return list;
   }
 
   public ArrayList<String> bubble(ArrayList<String> list, boolean ascending) {
