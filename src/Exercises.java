@@ -125,6 +125,16 @@ public class Exercises {
 			return null;
 	  }
 	  
+	  for (int j = 1; j < list.size(); j++) {
+			int temp = list.get(j);
+			int i = j - 1;
+			while ((i > -1) && (list.get(i) > temp)) {
+				list.set(i + 1, list.get(i));
+				i--;
+			}
+			list.set(i + 1, temp);
+	  }
+	  
 	  return null;
   }
 
