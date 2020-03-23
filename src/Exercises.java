@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Exercises {
 
   public int findMe(int[] list, int target) {
-	  if (target!=null && list[]!=null) {
+	  if (target!=null && !Arrays.asList(list).contains(null)) {
 		  for (var i=0; i<list.size();i++) {
 			  if (list.get(i) == target) {
 				  return i;
@@ -15,19 +15,20 @@ public class Exercises {
   }
 
   public int findMe(ArrayList<String> list, String target) {
-	  if (list.contains(null) || list == null || target == null) {
+	  if (list == null || list.size() == 0 || target == null) {
           return -1;
       }
-	  for (int i = 0; i < list.size(); i++) {
-          if (list.get(i).equals(target)) {
+	  
+      for (int i = 0; i < list.length; i++) {
+          if (list[i] == target) {
               return i;
           }
       }
-	  return -1;
+      return -1;
   }
 
   public int findMeFaster(ArrayList<Integer> list, int target) {
-	  if (list.contains(null) || list == null || target == null) {
+	  if (list == null || list.size() == 0) {
           return -1;
       }
 	  int start = 0;
@@ -49,9 +50,9 @@ public class Exercises {
   }
 
   public int findMeFaster(String[] list, String target) {
-	  if (Arrays.asList(list).contains(null) || Arrays.asList(list) == null || target == null) {
-		return -1;
-	  }
+	  if (list == null || list.length == 0 || target.equals(null)) {
+          return -1;
+      }
 	  
 	  int start = 0;
 	  int end = list.size() - 1;
@@ -71,9 +72,9 @@ public class Exercises {
   }
 
   public int[] bubble(int[] list, boolean ascending) {
-	  if (Arrays.asList(list).contains(null) || Arrays.asList(list) == null) {
-			return null;
-		}
+	  if (list == null || list.length == 0) {
+          return null;
+      }
 	  
 	  for (int i = 0; i < list.length - 1; i++) {
 			for (int j = 0; j < list.length - i - 1; j++) {
@@ -99,9 +100,9 @@ public class Exercises {
   }
 
   public ArrayList<String> bubble(ArrayList<String> list, boolean ascending) {
-	  if (list.contains(null) || list == null) {
-			return null;
-		}
+	  if (list == null || list.size() == 0) {
+          return null;
+      }
 	  
 	  for (int i = 0; i < list.size() - 1; i++) {
 			for (int j = 0; j < list.size() - 1 - i; j++) {
@@ -121,9 +122,9 @@ public class Exercises {
   }
 
   public ArrayList<Integer> insertion(ArrayList<Integer> list, boolean ascending) {
-	  if (list.contains(null) || list == null) {
-			return null;
-	  }
+	  if (list == null || list.size() == 0) {
+          return null;
+      }
 	  
 	  for (int j = 1; j < list.size(); j++) {
 			int temp = list.get(j);
@@ -143,9 +144,9 @@ public class Exercises {
   }
 
   public String[] insertion(String[] list, boolean ascending) {
-	  if (Arrays.asList(list).contains(null) || Arrays.asList(list) == null) {
-			return null;
-	  }
+	  if (list == null || list.length == 0) {
+          return null;
+      }
 	  
 	  for (int j = 1; j < list.length; j++) {
 			String current = list[j];
@@ -172,9 +173,9 @@ public class Exercises {
   }
 
   public int[] selection(int[] list, boolean ascending) {
-	  	if (Arrays.asList(list).contains(null) || Arrays.asList(list) == null) {
-			return null;
-		}
+	  if (list == null || list.length == 0) {
+          return null;
+      }
 
 		int n = list.length;
 		for (int i = 0; i < n - 1; i++) {
@@ -202,9 +203,9 @@ public class Exercises {
   }
 
   public ArrayList<String> selection(ArrayList<String> list, boolean ascending) {
-	  	if (Arrays.asList(list).contains(null) || Arrays.asList(list) == null) {
-			return null;
-		}
+	  if (Arrays.asList(list).contains(null) || Arrays.asList(list) == null) {
+          return null;
+      }
 
 		for (int i = 0; i < list.size(); i++) {
 			String smallest = list.get(i);
@@ -232,42 +233,112 @@ public class Exercises {
   }
 
   public ArrayList<Integer> merge(ArrayList<Integer> list, boolean ascending) {
-	  	if (list.contains(null) || list == null) {
-			return null;
-		}
+	  if (list.contains(null) || list == null) {
+          return null;
+      }
 
-		ArrayList<Integer> left = new ArrayList<Integer>();
-		ArrayList<Integer> right = new ArrayList<Integer>();
-		int center;
+      ArrayList < Integer > left = new ArrayList < Integer > ();
+      ArrayList < Integer > right = new ArrayList < Integer > ();
+      int center;
 
-		if (list.size() == 1) {
-			return list;
-		} else {
-			center = list.size() / 2;
-			for (int i = 0; i < center; i++) {
-				left.add(list.get(i));
-			}
+      if (list.size() == 1) {
+          return list;
+      } else {
+          center = list.size() / 2;
+          for (int i = 0; i < center; i++) {
+              left.add(list.get(i));
+          }
 
-			for (int i = center; i < list.size(); i++) {
-				right.add(list.get(i));
-			}
+          for (int i = center; i < list.size(); i++) {
+              right.add(list.get(i));
+          }
 
-			left = merge(left, true);
-			right = merge(right, true);
-			combineHalves(left, right, list);
-		}
-
-		if (!ascending) {
-			Collections.reverse(list);
-		}
-
-		return list;
+          left = merge(left, true);
+          right = merge(right, true);
+          combineHalves(left, right, list);
+      }
+      if (!ascending) {
+          Collections.reverse(list);
+      }
+      return list;
   }
 
   public String[] merge(String[] list, boolean ascending) {
-	  	if (Arrays.asList(list).contains(null) || Arrays.asList(list) == null) {
-			String[] temp = new String[0];
-			return temp;
-		}
+	  if (Arrays.asList(list).contains(null) || Arrays.asList(list) == null) {
+          String[] temp = new String[0];
+          return temp;
+      }
+
+      if (list.length >= 2) {
+          String[] left = new String[list.length / 2];
+          String[] right = new String[list.length - list.length / 2];
+
+          for (int i = 0; i < left.length; i++) {
+              left[i] = list[i];
+          }
+          for (int i = 0; i < right.length; i++) {
+              right[i] = list[i + list.length / 2];
+          }
+
+          merge(left, true);
+          merge(right, true);
+          combine(list, left, right);
+      }
+
+      if (!ascending) {
+          int i;
+          String t;
+          int x = list.length;
+          for (i = 0; i < x / 2; i++) {
+              t = list[i];
+              list[i] = list[x - i - 1];
+              list[x - i - 1] = t;
+          }
+      }
+      return list;
+  }
+  
+  private void combineHalves(ArrayList < Integer > left, ArrayList < Integer > right, ArrayList < Integer > complete) {
+      int leftIndex = 0;
+      int rightIndex = 0;
+      int completeArrayIndex = 0;
+      while (leftIndex < left.size() && rightIndex < right.size()) {
+          if ((left.get(leftIndex).compareTo(right.get(rightIndex))) < 0) {
+              complete.set(completeArrayIndex, left.get(leftIndex));
+              leftIndex++;
+          } else {
+              complete.set(completeArrayIndex, right.get(rightIndex));
+              rightIndex++;
+          }
+          completeArrayIndex++;
+      }
+      ArrayList < Integer > rest;
+      int restIndex;
+      if (leftIndex >= left.size()) {
+          rest = right;
+          restIndex = rightIndex;
+      } else {
+          rest = left;
+          restIndex = leftIndex;
+      }
+
+      for (int i = restIndex; i < rest.size(); i++) {
+          complete.set(completeArrayIndex, rest.get(i));
+          completeArrayIndex++;
+      }
+  }
+
+  private static void combine(String[] list, String[] left, String[] right) {
+      int a = 0;
+      int b = 0;
+      for (int i = 0; i < list.length; i++) {
+          if (b >= right.length || (a < left.length && left[a].compareToIgnoreCase(right[b]) < 0)) {
+              list[i] = left[a];
+              a++;
+          } else {
+              list[i] = right[b];
+              b++;
+          }
+      }
   }
 }
