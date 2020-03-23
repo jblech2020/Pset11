@@ -1,21 +1,11 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 public class Exercises {
 
   public int findMe(int[] list, int target) {
-	  if (target!=null && !Arrays.asList(list).contains(null)) {
-		  for (var i=0; i<list.size();i++) {
-			  if (list.get(i) == target) {
-				  return i;
-			  }
-		  }
-	  }
-	  
-	  return -1;
-  }
-
-  public int findMe(ArrayList<String> list, String target) {
-	  if (list == null || list.size() == 0 || target == null) {
+	  if (list == null || list.length == 0) {
           return -1;
       }
 	  
@@ -27,48 +17,61 @@ public class Exercises {
       return -1;
   }
 
+  public int findMe(ArrayList<String> list, String target) {
+	  if (list == null || list.size() == 0 || target == null) {
+          return -1;
+      }
+
+      for (int i = 0; i < list.size(); i++) {
+          if (list.get(i) == target) {
+              return i;
+          }
+      }
+      return -1;
+  }
+
   public int findMeFaster(ArrayList<Integer> list, int target) {
 	  if (list == null || list.size() == 0) {
           return -1;
       }
-	  int start = 0;
-      int end = list.size()-1;
-      int middle = 0;
-      while (start <= end) {
-          middle = (start+end) / 2;
 
+      int start = 0;
+      int middle = 0;
+      int end = list.size() - 1;
+
+      while (start <= end) {
+          middle = (start + end) / 2;
           if (list.get(middle) < target) {
               start = middle + 1;
           } else if (list.get(middle) > target) {
-              end = middle-1;
-          } else {
+              end = middle - 1;
+          } else if (list.get(middle) == target) {
               return middle;
           }
       }
-	  
-	  return -1;
+      return -1;
   }
 
   public int findMeFaster(String[] list, String target) {
 	  if (list == null || list.length == 0 || target.equals(null)) {
           return -1;
       }
-	  
-	  int start = 0;
-	  int end = list.size() - 1;
-	  int standard = -1;
-	  while (start <= end) {
-		int middle = (start + end) / 2;
-		if (list.get(middle) < target) {
-			start = middle + 1;
-		} else if (list.get(middle) > target) {
-			end = middle - 1;
-		} else if (list.get(middle) == target) {
-			standard = middle;
-			break;
-		}
-	  }
-	  return -1;
+
+      int start = 0;
+      int middle = 0;
+      int end = list.length;
+
+      while (start <= end) {
+          middle = (start + end) / 2;
+          if (list[middle].compareTo(target) < 0) {
+              start = middle + 1;
+          } else if (list[middle].compareTo(target) > 0) {
+              end = middle - 1;
+          } else if (list[middle].compareTo(target) == 0) {
+              return middle;
+          }
+      }
+      return -1;
   }
 
   public int[] bubble(int[] list, boolean ascending) {
