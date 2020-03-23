@@ -4,6 +4,7 @@ import java.util.Collections;
 
 public class Exercises {
 
+	//sudo bash grademe.sh findMe int[] 12
   public int findMe(int[] list, int target) {
 	  if (list == null || list.length == 0) {
           return -1;
@@ -17,6 +18,7 @@ public class Exercises {
       return -1;
   }
 
+  	//sudo bash grademe.sh findMe ArrayList\<String\> a
   public int findMe(ArrayList<String> list, String target) {
 	  if (list == null || list.size() == 0 || target == null) {
           return -1;
@@ -30,6 +32,7 @@ public class Exercises {
       return -1;
   }
 
+	//sudo bash grademe.sh findMeFaster ArrayList\<Integer\> 12
   public int findMeFaster(ArrayList<Integer> list, int target) {
 	  if (list == null || list.size() == 0) {
           return -1;
@@ -52,6 +55,7 @@ public class Exercises {
       return -1;
   }
 
+	//sudo bash grademe.sh findMeFaster String[] a
   public int findMeFaster(String[] list, String target) {
 	  if (list == null || list.length == 0 || target.equals(null)) {
           return -1;
@@ -74,6 +78,7 @@ public class Exercises {
       return -1;
   }
 
+  //sudo bash grademe.sh bubble int[] true
   public int[] bubble(int[] list, boolean ascending) {
 	  if (list == null || list.length == 0) {
           return null;
@@ -101,7 +106,8 @@ public class Exercises {
 
 		return list;
   }
-
+  
+  	//sudo bash grademe.sh bubble ArrayList\<String\> true
   public ArrayList<String> bubble(ArrayList<String> list, boolean ascending) {
 	  if (list == null || list.size() == 0) {
           return null;
@@ -123,7 +129,8 @@ public class Exercises {
 
 		return list;
   }
-
+  
+	//sudo bash grademe.sh insertion ArrayList\<Integer\> true
   public ArrayList<Integer> insertion(ArrayList<Integer> list, boolean ascending) {
 	  if (list == null || list.size() == 0) {
           return null;
@@ -146,6 +153,7 @@ public class Exercises {
 	  return list;
   }
 
+	//sudo bash grademe.sh insertion String[] true
   public String[] insertion(String[] list, boolean ascending) {
 	  if (list == null || list.length == 0) {
           return null;
@@ -175,6 +183,7 @@ public class Exercises {
 		return list;  
   }
 
+	//sudo bash grademe.sh selection int[] true
   public int[] selection(int[] list, boolean ascending) {
 	  if (list == null || list.length == 0) {
           return null;
@@ -205,6 +214,7 @@ public class Exercises {
 		return list;
   }
 
+	//sudo bash grademe.sh selection ArrayList\<String\> true
   public ArrayList<String> selection(ArrayList<String> list, boolean ascending) {
 	  if (Arrays.asList(list).contains(null) || Arrays.asList(list) == null) {
           return null;
@@ -235,6 +245,7 @@ public class Exercises {
 		return list;
   }
 
+	//sudo bash grademe.sh merge ArrayList\<Integer\> true
   public ArrayList<Integer> merge(ArrayList<Integer> list, boolean ascending) {
 	  if (list.contains(null) || list == null) {
           return null;
@@ -266,6 +277,7 @@ public class Exercises {
       return list;
   }
 
+	//sudo bash grademe.sh merge String[] true
   public String[] merge(String[] list, boolean ascending) {
 	  if (Arrays.asList(list).contains(null) || Arrays.asList(list) == null) {
           String[] temp = new String[0];
